@@ -1,7 +1,7 @@
 import { Header } from "@/src/Header";
 import { Item } from "@/src/Item";
 import { MenuFilters } from "@/src/MenuFilter";
-import { REACT_CARDS } from "@/src/const";
+import { REACT_CARDS } from "@/src/react-cards";
 
 export default function Home({ searchParams }) {
   const filters = [...new Set(REACT_CARDS.map((card) => card.category))];
