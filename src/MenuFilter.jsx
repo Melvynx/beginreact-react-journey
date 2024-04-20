@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const MenuFilters = ({ currentFilter, filters }) => {
   return (
-    <nav className="flex w-full gap-4 lg:max-w-[200px] lg:flex-col">
+    <nav className="flex w-full flex-wrap gap-4 lg:max-w-[200px] lg:flex-col">
       <MenuItem currentFilter={currentFilter} filter="">
         All
       </MenuItem>
