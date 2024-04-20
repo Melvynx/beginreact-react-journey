@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const MenuFilters = ({ currentFilter, filters }) => {
   return (
-    <nav className="flex lg:flex-col gap-4 w-full lg:max-w-[200px]">
+    <nav className="flex w-full gap-4 lg:max-w-[200px] lg:flex-col">
       <MenuItem currentFilter={currentFilter} filter="">
         All
       </MenuItem>
@@ -20,7 +20,7 @@ const MenuItem = ({ filter, children, currentFilter }) => {
   return (
     <Link
       className={clsx(
-        " hover:bg-gray-200 transition-colors px-2 py-1 rounded-md capitalize",
+        " rounded-md px-2 py-1 capitalize transition-colors hover:bg-gray-200",
         {
           "font-bold": filter === currentFilter,
         }

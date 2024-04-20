@@ -3,21 +3,29 @@ import Link from "next/link";
 import { ReactSvg } from "./ReactSvg";
 import { Button, buttonVariants } from "./button";
 
-export const Item = ({ item }) => {
+export const Item = ({ item, hideCategory }) => {
   return (
-    <div className="flex flex-col hover:bg-gray-100 transition-colors hover:border-gray-300 gap-4 p-4 items-center justify-center rounded-lg shadow border">
-      <div className="flex items-center gap-2 w-full gap-w">
-        <ReactSvg size={32} />
-        <p className="font-bold text-md">React</p>
+    <div className="flex flex-col items-center justify-center gap-4 rounded-lg border p-4 shadow transition-colors hover:border-gray-300 hover:bg-gray-100">
+      <div className="flex w-full items-center gap-2">
+        <ReactSvg size={24} />
+        <p className="text-base font-bold">React</p>
       </div>
-      <p className="text-center w-full line-clamp-1 font-extrabold text-lg overflow-hidden text-ellipsis">
+      <p className="line-clamp-1 w-full overflow-hidden text-ellipsis text-center text-lg font-extrabold">
         {item.name}
       </p>
-      <p className="text-gray-400 text-sm text-start">{item.category}</p>
-      <div className="w-full flex gap-2 items-center justify-end">
+
+      <div className="flex w-full items-center gap-2">
+        {hideCategory ? null : (
+          <p className="line-clamp-1 text-start text-xs text-gray-400 ">
+            {item.category}
+          </p>
+        )}
         <Link
           href={item.url}
-          className={buttonVariants({ variant: "secondary" })}
+          className={buttonVariants({
+            variant: "secondary",
+            className: "ml-auto",
+          })}
         >
           <BookOpenText size={16} />
         </Link>
